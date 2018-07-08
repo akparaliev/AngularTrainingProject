@@ -1,0 +1,12 @@
+<div>
+  Name : {{product.name}}
+</div>
+<div>
+   Desc : {{product.description}}
+</div>
+<div>
+   Price : {{product.price}}
+</div>
+<div>
+  Count: <input text="number" #box (keyup)="onCountChange(box.value)" [value]="count">
+</div>

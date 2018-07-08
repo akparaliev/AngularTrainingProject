@@ -1,6 +1,7 @@
-1) создал сервис ProductService, который берет данные с product-mock.ts
-2) сервис используется в ProductListComponent, который получает список продуктов и выводит с помощью компонента ProductComponent
-3) создал сервис CartService, который хранит продукты, который были отправлены в корзину
-4) CartService хранит данные в виде Map<string(id продукта), number(кол-во продукта)>. При отображении вызывает метод ProductService и передает id продукта и получает данные продукта. Также получает кол-во продукта с коллекции Map<string,number>;
-5) CartComponent использует ProductComponent, который передает ему сам продукт и значение readonly = true.
-6) поле readonly прячет кнопку Buy в ProductComponent
+1) создал CartModule, ProductModule и соответственно сервисы CartService и ProductService.
+2) ProductService отдает данные по продуктам с мока.
+3) CartService сохраняет id продукта в массив, выдает кол-во продукта в корзине и выдает полную сумму всех продуктов в корзине.
+4) ProductComponent не отображает кнопку купить, если у продукта свойство IsAvailable равен false;
+5) CartItemComponent принимает в качестве инпутов сам продукт и его количество, и есть оутпут, который при возникновении события keyup на поле с количеством продукта, емиттит событие.
+6) CartListComponent подписывается на событие CartItemComponent - изменение кол-ва продукта CartItemComponent - с помощью CartService меняет кол-во продукта.
+7) CartListComponent берет как ViewChild компонент CartItemComponent, и выдает название первого попавщего такого компонента как самый популярный на текущий день.

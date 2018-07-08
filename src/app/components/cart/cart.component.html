@@ -1,6 +1,0 @@
-<div *ngIf="cartCount()>0">
-    <div *ngFor="let productId of getProductsIdsInCart()">
-        <app-product [product]="getProduct(productId)" [readonly]="true"> </app-product>
-        <div>Count of this product: {{this.getProductCount(productId)}}</div>
-    </div>
-</div>
