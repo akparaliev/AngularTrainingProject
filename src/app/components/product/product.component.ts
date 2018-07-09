@@ -1,7 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Category } from '../../enums/category.enum';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { BaseProductModel } from '../../models/product/base-product.model';
-import { CartService } from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -11,13 +9,14 @@ import { CartService } from '../../services/cart/cart.service';
 export class ProductComponent implements OnInit {
   @Input() product: BaseProductModel;
   @Input() readonly: boolean;
-  
-  constructor(private cartService: CartService) { }
+  @Output() addProductEvent = new EventEmitter();
+
+  constructor() { }
 
   ngOnInit() {  }
 
   onBuy() {
     console.log(`${this.product.name} was bought`);
-    this.cartService.addProductToCart(this.product.id);
+    this.addProductEvent.emit({ event: event, productId: this.product.id });
   }
 }
