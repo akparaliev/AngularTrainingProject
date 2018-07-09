@@ -18,7 +18,6 @@ import { CartComponent } from './components/cart/cart.component';
   imports: [
     BrowserModule
   ],
-  providers: [ ProductsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
