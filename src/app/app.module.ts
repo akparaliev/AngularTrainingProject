@@ -30,7 +30,7 @@ import { ProductsService } from './modules/products/services/product/products.se
   ],
   providers: [
     CartService,
-    ProductsService
+    ProductsService,
   ],
   bootstrap: [AppComponent]
 })

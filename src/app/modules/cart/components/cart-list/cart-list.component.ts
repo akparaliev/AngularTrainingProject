@@ -11,7 +11,7 @@ import { CartService } from '../../../../modules/cart/services/cart/cart.service
 })
 export class CartListComponent implements OnInit {
 
-  constructor(private productsService: ProductsService, public cartService: CartService) { }
+  constructor(private productsService: ProductsService, private cartService: CartService) { }
 
   ngOnInit() {}
 
@@ -24,19 +24,19 @@ export class CartListComponent implements OnInit {
   }
 
   getProductCount(id: string): number {
-    return this.cartService.productsInCart.get(id);
+    return this.cartService.getProductCount(id);
+  }
+
+  getProductsCount(): number {
+    return this.cartService.productsCount();
   }
 
   getTotalPrice() {
-    let total = 0;
-    this.cartService.productsInCart.forEach((count: number, productId: string) => {
-      total += this.productsService.get(productId).price * count;
-    });
-    return total;
+    return this.cartService.productsTotalPrice();
   }
 
   changeProductCount($event, productId: string) {
-    this.cartService.productsInCart.set(productId, $event.newValue);
+    this.cartService.setProductCount(productId, $event.newValue);
   }
 }
 
