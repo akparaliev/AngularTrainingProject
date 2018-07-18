@@ -15,6 +15,7 @@ const ConstantValue = { App: 'TaskManager', Ver: '1.0' };
   ],
   declarations: [DemoComponent],
   providers: [
+    GeneratorService,
     { provide: LocalStorageService, useClass: LocalStorageService},
     { provide: ConfigOptionsService, useClass: ConfigOptionsService},
     { provide: ConstantsService, useValue: ConstantValue },
