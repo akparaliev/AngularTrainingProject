@@ -10,7 +10,7 @@ export class GeneratorService {
   getRandomSequence(): string {
     const charSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let randomString = '';
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < this.length; i++) {
         const pos = Math.floor(Math.random() * charSet.length);
         randomString += charSet.substring(pos, pos + 1);
     }
