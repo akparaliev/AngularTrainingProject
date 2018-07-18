@@ -9,11 +9,9 @@ import { ProductComponent } from '../product/product.component';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent implements OnInit, OnDestroy, AfterViewInit {
-  @ViewChild(ProductComponent) productChild: ProductComponent;
+export class ProductListComponent implements OnInit, OnDestroy {
 
   products: BaseProductModel[];
-  popularProduct: string;
 
   constructor(private productsService: ProductsService, private cartService: CartService) { }
 
@@ -27,10 +25,6 @@ export class ProductListComponent implements OnInit, OnDestroy, AfterViewInit {
 
   onBuy(id: string) {
     this.cartService.addProductToCart(id);
-  }
-
-  ngAfterViewInit() {
-    this.popularProduct = this.productChild.product.name;
   }
 
 }
