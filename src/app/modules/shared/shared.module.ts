@@ -7,10 +7,10 @@ import { BorderHighlightDirective } from '.';
     CommonModule
   ],
   declarations: [
-    BorderHighlightDirective
+    BorderHighlightDirective,
   ],
   exports: [
-    BorderHighlightDirective
+    BorderHighlightDirective,
   ]
 })
 export class SharedModule { }

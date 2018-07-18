@@ -2,10 +2,10 @@
     Name: {{product.name}}
 </h3>
 <p>
-    Desc: {{product.description}}
+    Desc: {{product.description | uppercase:'price'}}
 </p>
 <p>
-    Price: {{product.price}}
+    Price: {{product.price | currency:'EUR'}}
 </p>
 <p>
     Category: {{product.category}}

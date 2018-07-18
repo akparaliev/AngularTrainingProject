@@ -2,10 +2,10 @@
   Name : {{product.name}}
 </div>
 <div>
-   Desc : {{product.description}}
+   Desc : {{product.description | uppercase}}
 </div>
 <div>
-   Price : {{product.price}}
+   Price : {{product.price | currency:'EUR'}}
 </div>
 <div>
   Count: <input text="number" #box (keyup)="onCountChange(box.value)" [value]="count">

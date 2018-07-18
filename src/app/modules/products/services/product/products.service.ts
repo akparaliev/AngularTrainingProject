@@ -8,8 +8,8 @@ export class ProductsService {
   constructor() {
   }
 
-  getAll(): BaseProductModel[] {
-    return PRODUCTS;
+  getAll(): Promise<BaseProductModel[]> {
+    return new Promise((resolve) => { resolve(PRODUCTS); });
   }
 
   get(id: string) {

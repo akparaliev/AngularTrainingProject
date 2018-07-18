@@ -1,6 +1,4 @@
-1) создал LocalStorageService, ConfigOptionsService, ConstantsService, GeneratorService и внедрил в CoreModule.
-2) переписал CartService
-3) задание( Напишите директиву, которая добавляет обработчик события click к хост элементу. 
-   Клик изменяет размер шрифта элемента, рамку или что-то другое на Ваше усмотрение. 
-   Добавьте @Input() для директивы. Используйте ElementRef/Renderer2) выполнил еще в ветке Task2.
-bug: не работают сервисы в главном модуле, после регистрации их в CoreModule.
+1) применил pipe для цены(currency: 'EUR') в продуктах и в корзине
+2) переписал метод для получения продуктов на промис, применил async pipe
+3) создал OrderByPipe, описал его в SharedModule.
+4) Применил OrderByPipe для сортировки цены в компоненте ProductList 

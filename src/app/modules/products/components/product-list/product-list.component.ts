@@ -11,7 +11,7 @@ import { ProductComponent } from '../product/product.component';
 })
 export class ProductListComponent implements OnInit, OnDestroy {
 
-  products: BaseProductModel[];
+  products: Promise<BaseProductModel[]>;
 
   constructor(private productsService: ProductsService, private cartService: CartService) { }
 

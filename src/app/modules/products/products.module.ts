@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductComponent, ProductListComponent } from '.';
+import { OrderByPipe } from '../shared/pipes/order-by/order-by.pipe';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   declarations: [
     ProductListComponent,
-    ProductComponent
+    ProductComponent,
+    OrderByPipe
   ],
   exports: [
     ProductListComponent
