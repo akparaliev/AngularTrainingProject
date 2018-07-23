@@ -9,7 +9,7 @@ export class CartService {
     this.productsInCart = new Map<string, number>();
   }
 
-  addProductToCart(id: string, count = 1 ) {
+  addProductToCart(id: string, count = 1 ): void {
     if (this.productsInCart.has(id)) {
       const currentCount = this.productsInCart.get(id);
       this.productsInCart.set(id, currentCount + count);
@@ -29,7 +29,7 @@ export class CartService {
   productsTotalPrice(): number {
       let total = 0;
       this.productsInCart.forEach((count: number, productId: string) => {
-        total += this.productsService.get(productId).price * count;
+         total += this.productsService.get(productId).price * count;
       });
       return total;
   }

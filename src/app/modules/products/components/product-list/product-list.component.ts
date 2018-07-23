@@ -2,7 +2,8 @@ import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild } from '@angular
 import { ProductsService } from '../../services/product/products.service';
 import { BaseProductModel } from '../../models/base-product.model';
 import { CartService } from '../../../cart/services/cart/cart.service';
-import { ProductComponent } from '../product/product.component';
+import { Router } from '@angular/router';
+import { ProductModel } from '../../models/product.model';
 
 @Component({
   selector: 'app-product-list',
@@ -13,7 +14,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   products: Promise<BaseProductModel[]>;
 
-  constructor(private productsService: ProductsService, private cartService: CartService) { }
+  constructor(private router: Router,
+              private productsService: ProductsService,
+              private cartService: CartService) { }
 
   ngOnInit() {
     this.products = this.productsService.getAll();
@@ -23,6 +26,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.products = null;
   }
 
+  onOpenProduct(product: ProductModel) {
+    const link = ['/products', product.id];
+    this.router.navigate(link);
+  }
   onBuy(id: string) {
     this.cartService.addProductToCart(id);
   }

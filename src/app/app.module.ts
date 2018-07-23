@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { ProductsModule } from './modules/products/products.module';
+import { Router } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
+import { ProductsModule } from './modules/products/products.module';
 import { CoreModule } from './modules/core/core.module';
 import { OrdersModule } from './modules/orders/orders.module';
 import { SharedModule } from './modules/shared/shared.module';
@@ -27,7 +29,8 @@ import { ProductsService } from './modules/products/services/product/products.se
     ProductsModule,
     CoreModule,
     OrdersModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [
     CartService,
@@ -35,4 +38,9 @@ import { ProductsService } from './modules/products/services/product/products.se
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+}
+
+}

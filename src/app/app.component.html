@@ -1,4 +1,20 @@
-<app-product-list></app-product-list>
-<app-cart-list></app-cart-list>
-<app-demo></app-demo>
+<li>
+    <a class="navbar-brand" routerLink="/products">Products</a>
+</li>
+<li routerLinkActive="active">
+    <a routerLink="/cart">Cart</a>
+</li>
+
+<div class="container">
+        <div class="col-md-10">
+                <router-outlet></router-outlet>
+           </div>
+           <div class="col-md-2">
+                <router-outlet name="popup"></router-outlet>
+           </div>
+      
+</div>
+
+    
+
 

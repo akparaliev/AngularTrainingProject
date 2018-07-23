@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../../products/services/product/products.service';
 import { BaseProductModel } from '../../../products/models/base-product.model';
-import { CartService } from '../../../../modules/cart/services/cart/cart.service';
+import { CartService } from '../../services/cart/cart.service';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { CartService } from '../../../../modules/cart/services/cart/cart.service
 })
 export class CartListComponent implements OnInit {
 
-  constructor(private productsService: ProductsService, private cartService: CartService) { }
+  constructor(private productsService: ProductsService, public cartService: CartService) { }
 
   ngOnInit() {}
 

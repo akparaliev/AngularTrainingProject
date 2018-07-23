@@ -9,11 +9,10 @@ export class ProductsService {
   }
 
   getAll(): Promise<BaseProductModel[]> {
-    return new Promise((resolve) => { resolve(PRODUCTS); });
+    return Promise.resolve(PRODUCTS);
   }
 
-  get(id: string) {
+  get(id: string): BaseProductModel {
     return PRODUCTS.filter(x => x.id === id)[0];
   }
-
 }
