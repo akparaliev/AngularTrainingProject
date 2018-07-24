@@ -1,0 +1,11 @@
+<div class="row">
+  <h4 class="col-md-10">Product reviews</h4>
+  <span class="col-md-2">
+    <button class="btn btn-default" (click)="onClose()">Close</button>
+  </span>
+</div>
+<div *ngFor="let review of reviews;">
+  <div>
+    {{review}}
+  </div>
+</div>

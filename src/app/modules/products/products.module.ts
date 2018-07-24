@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductComponent, ProductListComponent, ProductFormComponent } from '.';
+import { ProductComponent, ProductListComponent, ProductFormComponent, ReviewsComponent } from '.';
 import { OrderByPipe } from '../shared/pipes/order-by/order-by.pipe';
 import { ProductsRoutingModule } from './products-routing.module';
 import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   imports: [
@@ -15,11 +16,13 @@ import { FormsModule } from '@angular/forms';
     ProductListComponent,
     ProductComponent,
     ProductFormComponent,
-    OrderByPipe
+    OrderByPipe,
+    ReviewsComponent
   ],
   exports: [
     ProductListComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ReviewsComponent
   ]
 })
 export class ProductsModule { }

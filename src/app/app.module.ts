@@ -14,6 +14,7 @@ import { CartListComponent } from './modules/cart/components/cart-list/cart-list
 import { CartItemComponent } from './modules/cart/components/cart-item/cart-item.component';
 import { CartService } from './modules/cart/services/cart/cart.service';
 import { ProductsService } from './modules/products/services/product/products.service';
+import { ReviewsService } from './modules/products/services/reviews/reviews.service';
 
 
 
@@ -35,6 +36,7 @@ import { ProductsService } from './modules/products/services/product/products.se
   providers: [
     CartService,
     ProductsService,
+    ReviewsService
   ],
   bootstrap: [AppComponent]
 })

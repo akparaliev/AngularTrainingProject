@@ -4,6 +4,7 @@ import { BaseProductModel } from '../../models/base-product.model';
 import { CartService } from '../../../cart/services/cart/cart.service';
 import { Router } from '@angular/router';
 import { ProductModel } from '../../models/product.model';
+import { ReviewsService } from '../../services/reviews/reviews.service';
 
 @Component({
   selector: 'app-product-list',
@@ -16,7 +17,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router,
               private productsService: ProductsService,
-              private cartService: CartService) { }
+              private cartService: CartService,
+              public reviewsService: ReviewsService
+            ) { }
 
   ngOnInit() {
     this.products = this.productsService.getAll();
@@ -30,6 +33,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
     const link = ['/products', product.id];
     this.router.navigate(link);
   }
+
   onBuy(id: string) {
     this.cartService.addProductToCart(id);
   }

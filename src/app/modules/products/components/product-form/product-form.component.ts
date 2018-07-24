@@ -18,7 +18,7 @@ export class ProductFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.product = new ProductModel('', '', '', 0, null, false, null);
+    this.product = new ProductModel('', '', '', 0, null, false, null, null);
 
     this.route.paramMap
       .pipe(
@@ -26,7 +26,6 @@ export class ProductFormComponent implements OnInit {
       .subscribe(
         product => {
           this.product = product;
-          console.log(this.product);
         },
         err => console.log(err)
     );

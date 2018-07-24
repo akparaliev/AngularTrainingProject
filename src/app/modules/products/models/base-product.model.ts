@@ -7,4 +7,5 @@ export interface BaseProductModel {
     category: Category;
     isAvailable: boolean;
     providers: string[];
+    reviews: string[];
 }
