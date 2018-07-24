@@ -14,6 +14,8 @@ import { ReviewsService } from '../../services/reviews/reviews.service';
 export class ProductListComponent implements OnInit, OnDestroy {
 
   products: Promise<BaseProductModel[]>;
+  orderField: string;
+  fields: Array<string>;
 
   constructor(private router: Router,
               private productsService: ProductsService,
@@ -23,6 +25,8 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.products = this.productsService.getAll();
+    this.fields = Object.getOwnPropertyNames(new ProductModel(null, null, null, null, null, null, null, null));
+    this.orderField = this.fields[0];
   }
 
   ngOnDestroy() {

@@ -1,6 +1,9 @@
 <div class="container">
+        <select [(ngModel)]="orderField">
+            <option *ngFor="let field of fields">{{field}}</option>
+</select> 
   <div class="row">
-    <div class="product" *ngFor="let product of products|async|orderby:'price'">
+    <div class="product" *ngFor="let product of products|async|orderby:orderField">
         <app-product [product]="product"></app-product>
         <button *ngIf="product.isAvailable" (click)="onBuy(product.id)">Buy product</button>
         <button (click)="onOpenProduct(product)">Open product details</button>   
